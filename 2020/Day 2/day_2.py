@@ -6,7 +6,7 @@ sol_count_p2 = 0
 my_inputs = []
 
 def eval_part_1(pswd_txt, rule_min, rule_max, rule_chr):
-    if rule_min <= pswd_txt.count(rule_chr) <= rule_max:
+    if 	rule_min <= pswd_txt.count(rule_chr) <= rule_max:
         return True
     else:
         return False
@@ -27,11 +27,10 @@ try:
         print('file opened')
         my_inputs = [line.rstrip() for line in input_file]
         for rule in my_inputs:
-            line = line + 1
-            
+
             rule = re.sub('(-|\:|\s)','_',rule)
             rule = re.sub('__','_', rule)
-            
+         
             rule_min = int(rule.split('_')[0])
             rule_max = int(rule.split('_')[1])
             rule_chr = rule.split('_')[2]
